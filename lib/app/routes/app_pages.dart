@@ -1,0 +1,34 @@
+import 'package:get/get.dart';
+
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/movie_details/bindings/movie_details_binding.dart';
+import '../modules/movie_details/views/movie_details_view.dart';
+import '../modules/setting/bindings/setting_binding.dart';
+import '../modules/setting/views/setting_view.dart';
+
+part 'app_routes.dart';
+
+class AppPages {
+  AppPages._();
+
+  static const INITIAL = Routes.HOME;
+
+  static final routes = [
+    GetPage(
+      name: _Paths.HOME,
+      page: () => HomeView(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOVIE_DETAILS,
+      page: () => MovieDetailsView(),
+      binding: MovieDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTING,
+      page: () => SettingView(),
+      binding: SettingBinding(),
+    ),
+  ];
+}
